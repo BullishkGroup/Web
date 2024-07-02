@@ -1,0 +1,492 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #ccc;
+  font-family: "League Spartan", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
+}
+
+/*INICIO NAV BAR*/
+
+/* Estilos generales para el encabezado */
+header {
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7BC200;
+  padding: 10px 30px;
+  border-radius: 0px 0px 25px 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  width: 80%; 
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* Estilos para la lista de navegación */
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-right: 20px;
+  position: relative; /* Necesario para que el submenú se posicione en relación al padre */
+}
+
+ul li a {
+  color: #314a00;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: bolder;
+}
+
+ul li a:hover {
+  color: lightgreen;
+}
+
+/* Estilos para el botón del menú hamburguesa */
+.checkbtn {
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* Estilos para el submenú */
+.dropdown .dropdown-menu {
+  display: none; /* Oculto por defecto */
+  position: absolute;
+  top: 20px; /* Coloca el submenú justo debajo del elemento padre */
+  left: 0;
+  background-color: #7BC200; 
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown .dropdown-menu li {
+  margin: 0; 
+}
+
+.dropdown .dropdown-menu a {
+  color: #314a00;
+  padding: 10px 20px; /* Espacio interno en los enlaces del submenú */
+  display: block; /* Hace que los enlaces ocupen todo el ancho disponible */
+  transition: background-color 0.3s ease;
+}
+
+.dropdown .dropdown-menu a:hover {
+border-radius: 8px;
+  background-color: #314a00; /* Color de fondo al pasar el ratón */
+}
+
+/* Mostrar el submenú cuando se pasa el mouse por encima del .dropdown o .dropdown-menu */
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
+  display: block; /* Muestra el submenú */
+}
+
+/* Para asegurar que el submenú se mantenga visible al interactuar */
+.dropdown-menu:hover {
+  display: block;
+}
+
+.nav-links a:hover {
+  color: white; /* Cambia el color al pasar el ratón por encima */
+}
+
+/* Estilos para el visor de tarifas */
+#visorTarifas {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-height: 80%; /* Limita la altura máxima para evitar que la ventana sea demasiado grande */
+  overflow: auto; /* Permite el desplazamiento cuando la imagen es más grande que el contenedor */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+}
+
+#visorTarifas img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 50px;
+}
+
+#visorTarifas .cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#visorTarifas button {
+  margin: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+#visorTarifas::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .checkbtn {
+    display: block;
+    order: 1;
+    margin-right: 20px;
+  }
+
+  ul {
+    border-radius: 100px 0px 0px 100px;
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    background-color:#7BC200;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    z-index: 10000;
+  }
+
+  ul li {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  ul li a {
+    font-size: 20px;
+  }
+
+  #check:checked ~ ul {
+    right: 0;
+  }
+
+  .dropdown .dropdown-menu {
+    display: none;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    box-shadow: none;
+    border-radius: 0%;
+  }
+  
+  .dropdown .dropdown-menu li {
+    margin: 0; 
+  }
+  
+  .dropdown .dropdown-menu a {
+    color: #314a00;
+    display: block; 
+    transition: none;
+  }
+  
+  .dropdown .dropdown-menu a:hover {
+    border-radius: none;
+    background-color: #466B00; 
+    transition: 0.3s;
+  }
+  
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+/*FIN NAV BAR*/
+
+/*INICIO CONTENIDO*/
+
+/* Contenedor Flex principal */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  padding: 180px 50px 180px 50px;
+}
+
+/* Estilos para cada item */
+.flex-item {
+  flex: 55%;
+  margin: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  transform: rotate(-10deg) skew(-15deg);
+  padding: 40px 30px 30px 30px; /* Ajuste de padding para dar espacio al título */
+  color: #FFFFFF;
+  position: relative;
+}
+
+/* Estilos específicos para cada item */
+.item1 {
+  background-color: #466B00;
+}
+
+.item2, .item3 {
+  background-color: #71C200;
+}
+
+/* Estilos para los títulos */
+.qs {
+  font-size: 40px;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  color: #466B00;
+  position: relative; /* Ajustar la posición relativa para estar dentro del contenedor */
+  width: auto; /* Ajustar al tamaño del contenido */
+  background-color: #71C200; /* Mantener el mismo color de fondo que el contenedor */
+  justify-content: center;
+  text-align: center;
+  border-radius: 100px;
+  font-weight: bolder;
+}
+
+.Mision {
+  font-size: 40px;
+  margin: 0 0 20px 0;
+  padding: 10px;
+  color: #71C200;
+  position: relative; /* Ajustar la posición relativa para estar dentro del contenedor */
+  width: auto; /* Ajustar al tamaño del contenido */
+  background-color: #466B00; /* Mantener el mismo color de fondo que el contenedor */
+  justify-content: center;
+  text-align: center;
+  border-radius: 100px;
+  font-weight: bolder;
+}
+
+/* Estilos para los párrafos */
+#p1, #p2, #p3 {
+  font-size: 18px;
+  text-align: justify;
+  line-height: 1.5;
+  margin-top: 20px; /* Espacio entre el título y el párrafo */
+  transform: none; /* Desactivar el skew/rotate para los párrafos */
+  padding: 0px 50px 0px 50px ;
+}
+
+/* Ajustes adicionales para responsive design */
+
+/* Para pantallas medianas */
+@media (max-width: 1024px) {
+  .qs, .Mision {
+    font-size: 30px;
+  }
+
+  #p1, #p2, #p3 {
+    font-size: 16px;
+  }
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-item {
+    flex: 1 1 100%;
+    transform: none;
+    margin: 10px 0;
+  }
+
+  .qs, .Mision {
+    font-size: 25px;
+  }
+
+  #p1, #p2, #p3 {
+    padding: 15px;
+    font-size: 14px;
+    margin-top: 10px; /* Ajuste para el espacio del título */
+  }
+}
+
+/* Para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .qs, .Mision {
+    font-size: 20px;
+  }
+
+  #p1, #p2, #p3 {
+    padding: 1px;
+    font-size: 12px;
+    margin-top: 10px; /* Ajuste para el espacio del título */
+  }
+}
+
+/*FIN CONTENIDO*/
+
+/*INICIO FOOTER*/
+
+.site-footer {
+  background-color: #7BC200;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Permitir que las secciones se envuelvan en múltiples líneas */
+  justify-content: space-between;
+  color: #ffffff;
+  text-align: center; 
+}
+
+.footer-section {
+  flex: 1;
+  margin-right: 20px;
+  min-width: 200px; /* Asegura que las secciones no se vuelvan demasiado pequeñas */
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section a {
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.social-links {
+  list-style-type: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.social-links li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.social-links li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-links li a:hover {
+  text-decoration: underline;
+}
+
+.modalDialog {
+  position: fixed;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 400ms ease-in;
+  pointer-events: none;
+}
+
+.modalDialog:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalDialog > div {
+  width: 80%; /* Reduce el ancho para pantallas pequeñas */
+  max-width: 500px; /* Máximo ancho en pantallas grandes */
+  position: relative;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #7BC200;
+  transition: opacity 400ms ease-in;
+  max-height: 50vh; /* Altura máxima */
+  overflow-y: auto; /* Desplazamiento vertical */
+  overflow-x: hidden;
+}
+
+.close {
+  background: #606061;
+  color: #FFFFFF;
+  line-height: 25px;
+  position: absolute;
+  right: 10px; /* Espacio desde la derecha */
+  top: 10px; /* Espacio desde la parte superior */
+  width: 24px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 100000; /* Asegura que esté sobre la barra de desplazamiento */
+  border-radius: 12px;
+  box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover {
+  background: #466B00;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    flex-direction: column; /* Apila las secciones en una columna */
+    align-items: center; /* Centra las secciones en el eje horizontal */
+    text-align: left;
+    bottom:0; 
+    width: 100%
+  }
+
+  .footer-section {
+    margin-right: 0; /* Elimina el margen derecho en pantallas pequeñas */
+    margin-bottom: 20px; /* Añade un margen inferior entre las secciones */
+    text-align: center;
+  }
+
+  .social-links li {
+    display: block; /* Cambia la visualización a bloque para centrar los iconos */
+    margin: 10px 0; /* Añade un margen vertical entre los iconos */
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section {
+    flex: 1 1 100%; /* Asegura que cada sección ocupe el 100% del ancho */
+    text-align: center;
+  }
+
+  .footer-section h3 {
+    font-size: 16px; /* Ajusta el tamaño de la fuente para pantallas muy pequeñas */
+  }
+
+  .footer-section p, .footer-section a {
+    font-size: 12px; /* Ajusta el tamaño de la fuente para pantallas muy pequeñas */
+  }
+
+  .modalDialog > div {
+    width: 90%; /* Ajusta el ancho del modal para pantallas muy pequeñas */
+  }
+}
+
+/*FIN FOOTER*/
+

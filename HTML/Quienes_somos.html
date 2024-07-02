@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal</title>
+    <link rel="stylesheet" href="../CSS/Quienes_Somos.css">
+    <link href="https://fonts.cdnfonts.com/css/tisa-sans-pro?styles=117144,117141" rel="stylesheet">
+    <linkrel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/74f2d06ce4.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            (function (d, script) {
+                script = d.createElement('script');
+                script.type = 'text/javascript';
+                script.async = true;
+                script.src = 'https://w.app/widget-v1/JSEP29.js';
+                d.getElementsByTagName('head')[0].appendChild(script);
+            }(document));
+        };
+    </script>
+    <link href="dist/hamburgers.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div class="logo">
+                <a href="#"><img src="../RECURSOS/LOGO BLANCO.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="Coberturas.html">Coberturas</a></li>
+                <li><a href="#" id="mostrarVisor">Tarifas</a></li>
+                <div id="visorTarifas">
+                    <span class="cerrar" onclick="cerrarVisor()">×</span>
+                    <img id="imagenTarifa" src="../RECURSOS/tarifas.jpg" alt="Imagen de tarifas">
+                </div>
+
+                <script>
+
+                    document.getElementById('mostrarVisor').addEventListener('click', function (event) {
+                        event.preventDefault();
+                        document.getElementById('visorTarifas').style.display = 'block';
+                        document.getElementById('fondoOscuro').style.display = 'block'; // Muestra el fondo oscuro
+                    });
+
+                    function cerrarVisor() {
+                        document.getElementById('visorTarifas').style.display = 'none';
+                        document.getElementById('fondoOscuro').style.display = 'none'; // Oculta el fondo oscuro
+                    }
+
+                </script>
+
+                <li class="dropdown">
+                    <a href="#nosotros">Nosotros</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="Quienes_Somos.html">Quienes Somos</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="flex-container">
+        <div class="flex-item item1">
+            <h2 class="qs">QUIENES SOMOS</h2>
+            <p id="p1">
+                En Kangaroo, estamos comprometidos a hacer que la vida de nuestros clientes sea más conveniente y eficiente.
+                Desde nuestra fundación, nos hemos dedicado a proporcionar un servicio de envío a domicilio excepcional que 
+                cumple con las necesidades diarias y excepcionales de nuestros clientes.
+                Nuestro equipo está formado por personas apasionadas y dedicadas que entienden la importancia de la puntualidad,
+                la seguridad y la calidad en cada entrega. Nos esforzamos por superar las expectativas de nuestros clientes
+                en cada paso del proceso, desde la selección de productos hasta la entrega final en la puerta de su hogar.
+            </p>
+        </div>
+        <div class="flex-item item2">
+            <h2 class="Mision">MISIÓN</h2>
+            <p id="p2">
+                En Kangaroo, nuestra visión es transformar la experiencia de envíos a domicilio para nuestros clientes.
+                Nos esforzamos por ser líderes en innovación y excelencia en la industria, ofreciendo soluciones que no solo 
+                satisfagan las necesidades actuales de nuestros clientes, sino que también anticipen y superen sus expectativas 
+                futuras.
+            </p>
+        </div>
+        <div class="flex-item item3">
+            <h2 class="Mision">VISIÓN</h2>
+            <p id="p3">
+                En Kangaroo, nuestra misión es mucho más que simplemente entregar paquetes. Nos comprometemos a brindar a nuestros
+                clientes una experiencia de envío a domicilio excepcional en cada paso del camino. Desde el momento en que un cliente
+                realiza un pedido hasta la entrega final, nos esforzamos por ofrecer conveniencia, seguridad y confiabilidad incomparables.
+            </p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-section">
+            <h3>Redes Sociales</h3>
+            <ul class="social-links">
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook fa-2xl"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/flyfast.col/?utm_source=ig_web_button_share_sheet">
+                        <i class="fa-brands fa-instagram fa-2xl"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@flyfast.col?is_from_webapp=1&sender_device=pc">
+                        <i class="fa-brands fa-tiktok fa-2xl"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <p>Dirección: Calle Principal, Ciudad</p>
+            <p>Email: info@ejemplo.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Información</h3>
+            <p>Sobre Nosotros</p>
+            <a href="#openModal">Terminos y condiciones</a>
+
+            <div id="openModal" class="modalDialog">
+                <div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <h2>Terminos y condiciones - Fly Fast</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ligula enim, sagittis id euismod
+                        feugiat, dignissim viverra sem. Vestibulum et suscipit metus. Pellentesque pretium ex in congue
+                        porttitor. Etiam fermentum felis id fringilla posuere. Vestibulum iaculis placerat tellus et
+                        fermentum. Morbi ullamcorper ligula vitae urna sodales iaculis. Cras eget elit vel purus dictum
+                        rhoncus quis sed nisi. Etiam imperdiet maximus egestas. Nulla eros odio, blandit ullamcorper
+                        tincidunt at, malesuada non arcu. Praesent non arcu nunc. Aliquam vehicula commodo tortor vel
+                        consequat.
+
+                        Nunc mi enim, feugiat quis augue eu, consectetur congue justo. Vivamus eget efficitur sapien,
+                        quis cursus nunc. Praesent varius est quis ipsum rutrum, nec egestas lorem fringilla. Sed luctus
+                        elit ac interdum gravida. Curabitur in tellus in nibh tempus finibus nec eu velit. Donec dapibus
+                        sapien eget urna imperdiet, in gravida odio lobortis. Duis consequat lobortis semper. Nunc ac
+                        leo vitae ex ultrices ultricies ac id risus. Nullam maximus justo elit.
+
+                        Duis accumsan ante sit amet condimentum aliquet. Sed consequat rutrum viverra. Nunc sed erat sed
+                        mauris posuere vestibulum non sit amet dui. Etiam malesuada id tortor non imperdiet. Curabitur
+                        vel volutpat lacus. Duis laoreet nulla vitae tincidunt tincidunt. Donec tristique varius felis
+                        scelerisque accumsan.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

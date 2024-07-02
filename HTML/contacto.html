@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - FlyFast</title>
+    <link rel="stylesheet" href="../CSS/contacto.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <input type="checkbox" id="check">
+            <label for="check" class="checkbtn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <div class="logo">
+                <a href="#"><img src="../RECURSOS/LOGO BLANCO.png" alt="Logo"></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="Coberturas.html">Coberturas</a></li>
+                <li><a href="#" id="mostrarVisor">Tarifas</a></li>
+                <div id="visorTarifas">
+                    <span class="cerrar" onclick="cerrarVisor()">×</span>
+                    <img id="imagenTarifa" src="../RECURSOS/tarifas.jpg" alt="Imagen de tarifas">
+                </div>
+
+                <script>
+
+                    document.getElementById('mostrarVisor').addEventListener('click', function (event) {
+                        event.preventDefault();
+                        document.getElementById('visorTarifas').style.display = 'block';
+                        document.getElementById('fondoOscuro').style.display = 'block'; // Muestra el fondo oscuro
+                    });
+
+                    function cerrarVisor() {
+                        document.getElementById('visorTarifas').style.display = 'none';
+                        document.getElementById('fondoOscuro').style.display = 'none'; // Oculta el fondo oscuro
+                    }
+
+                </script>
+
+                <li class="dropdown">
+                    <a href="#nosotros">Nosotros</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="Quienes_Somos.html">Quienes Somos</a></li>
+                        </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="contact-info">
+            <h2>Información de Contacto</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p>+57 300 508 2299</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>flyfast2024@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Ubicación</h3>
+                    <p>Cra 52 #75-111</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-form">
+            <h2>Envíanos un Mensaje</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section class="map">
+            <h2>Encuéntranos Aquí</h2>
+            <div class="map-container">
+                <!-- Puedes usar Google Maps o cualquier otro servicio de mapas aquí -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.124098509805!2d-74.80680003039105!3d11.00133401578177!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42da066063177%3A0x1050508db2096dad!2sCra.%2052%20%2375-111%2C%20Nte.%20Centro%20Historico%2C%20Barranquilla%2C%20Atl%C3%A1ntico!5e0!3m2!1sen!2sco!4v1719437734376!5m2!1sen!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-section">
+            <h3>Redes Sociales</h3>
+            <ul class="social-links">
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-facebook fa-2xl"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/flyfast.col/?utm_source=ig_web_button_share_sheet">
+                        <i class="fa-brands fa-instagram fa-2xl"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.tiktok.com/@flyfast.col?is_from_webapp=1&sender_device=pc">
+                        <i class="fa-brands fa-tiktok fa-2xl"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Contacto</h3>
+            <p>Dirección: Cra 52 #75-11</p>
+            <p>Email: flyfast2024@gmail.com</p>
+        </div>
+        <div class="footer-section">
+            <h3>Información</h3>
+            <p>Sobre Nosotros</p>
+            <a href="#openModal">Terminos y condiciones</a>
+
+            <div id="openModal" class="modalDialog">html
+                <div>
+                    <a href="#close" title="Close" class="close">X</a>
+                    <h2>Terminos y condiciones - Fly Fast</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ligula enim, sagittis id euismod
+                        feugiat, dignissim viverra sem. Vestibulum et suscipit metus. Pellentesque pretium ex in congue
+                        porttitor. Etiam fermentum felis id fringilla posuere. Vestibulum iaculis placerat tellus et
+                        fermentum. Morbi ullamcorper ligula vitae urna sodales iaculis. Cras eget elit vel purus dictum
+                        rhoncus quis sed nisi. Etiam imperdiet maximus egestas. Nulla eros odio, blandit ullamcorper
+                        tincidunt at, malesuada non arcu. Praesent non arcu nunc. Aliquam vehicula commodo tortor vel
+                        consequat.
+
+                        Nunc mi enim, feugiat quis augue eu, consectetur congue justo. Vivamus eget efficitur sapien,
+                        quis cursus nunc. Praesent varius est quis ipsum rutrum, nec egestas lorem fringilla. Sed luctus
+                        elit ac interdum gravida. Curabitur in tellus in nibh tempus finibus nec eu velit. Donec dapibus
+                        sapien eget urna imperdiet, in gravida odio lobortis. Duis consequat lobortis semper. Nunc ac
+                        leo vitae ex ultrices ultricies ac id risus. Nullam maximus justo elit.
+
+                        Duis accumsan ante sit amet condimentum aliquet. Sed consequat rutrum viverra. Nunc sed erat sed
+                        mauris posuere vestibulum non sit amet dui. Etiam malesuada id tortor non imperdiet. Curabitur
+                        vel volutpat lacus. Duis laoreet nulla vitae tincidunt tincidunt. Donec tristique varius felis
+                        scelerisque accumsan.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
